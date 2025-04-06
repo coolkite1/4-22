@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻资讯 - 左右布局</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        /* 主容器 */
+        .news-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        /* 页面标题区域 */
+        .news-header {
+            padding: 25px 30px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .news-header h1 {
+            font-size: 28px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        
+        .news-header p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* 分隔线 */
+        .divider-line {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ddd, transparent);
+            margin: 0 30px;
+            border: none;
+        }
+        
+        /* 主内容区 - 左右布局 */
+        .main-content {
+            display: flex;
+            padding: 30px;
+        }
+        
+        /* 左栏 - 新闻详情 */
+        .left-column {
+            flex: 2;
+            padding-right: 30px;
+            border-right: 1px solid #eee;
+        }
+        
+        /* 右栏 - 热文推荐 */
+        .right-column {
+            flex: 1;
+            padding-left: 30px;
+        }
+        
+        /* 新闻文章样式 */
+        .news-article {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .news-article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .news-article h4 {
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 15px;
+        }
+        
+        .article-images {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .article-images img {
+            width: 50%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-images img:hover {
+            transform: scale(1.02);
+        }
+        
+        .article-content p {
+            color: #555;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .article-meta span {
+            margin-right: 15px;
+        }
+        
+        .article-author {
+            color: #2b6cb0;
+            font-weight: bold;
+        }
+        
+        /* 热文推荐样式 */
+        .hot-news-title {
+            font-size: 22px;
+            color: #222;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e74c3c;
+            margin-bottom: 20px;
+        }
+        
+        .hot-article {
+            margin-bottom: 25px;
+        }
+        
+        .hot-article a {
+            display: block;
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .hot-article a:hover {
+            color: #e74c3c;
+        }
+        
+        .hot-article img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+        
+        .hot-article img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .left-column {
+                padding-right: 0;
+                padding-bottom: 30px;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .right-column {
+                padding-left: 0;
+                padding-top: 30px;
+            }
+            
+            .article-images {
+                flex-direction: column;
+            }
+            
+            .article-images img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="news-container">
+        <!-- 页面标题 -->
+        <div class="news-header">
+            <h1>今日新闻资讯</h1>
+            <p>最新热点新闻与行业动态</p>
+        </div>
+        
+        <!-- 分隔线 -->
+        <hr class="divider-line">
+        
+        <!-- 主内容区 - 左右布局 -->
+        <div class="main-content">
+            <!-- 左栏 - 新闻详情 -->
+            <div class="left-column">
+                <!-- 第一篇新闻 -->
+                <div class="news-article">
+                    <h4>科技创新推动经济高质量发展</h4>
+                    <div class="article-images">
+                        <img src="C:\Users\Administrator\Desktop\lab4(2)-31-臧礼斌\1.webp" alt="科技新闻图片">
+                        <img src="C:\Users\Administrator\Desktop\lab4(2)-31-臧礼斌\2.webp" alt="科技新闻图片">
+                    </div>
+                    <div class="article-content">
+                        <p>近年来，我国科技创新能力显著提升，数字经济、人工智能、5G等新兴技术快速发展，为经济高质量发展提供了强劲动力。专家表示，未来科技创新将继续引领产业变革，推动传统产业转型升级。</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-author">张科技</span>
+                        <span>2023年10月15日</span>
+                        <span>阅读量: 5.2万</span>
+                    </div>
+                </div>
+                
+                <!-- 第二篇新闻 -->
+                <div class="news-article">
+                    <h4>全球气候变化峰会达成新协议</h4>
+                    <div class="article-images">
+                        <img src="C:\Users\Administrator\Desktop\lab4(2)-31-臧礼斌\3.webp" alt="气候新闻图片">
+                        <img src="C:\Users\Administrator\Desktop\lab4(2)-31-臧礼斌\4.jpg" alt="气候新闻图片">
+                    </div>
+                    <div class="article-content">
+                        <p>在刚刚结束的全球气候变化峰会上，各国代表就减排目标达成新协议。协议要求发达国家在2030年前将碳排放减少50%，发展中国家则根据国情制定相应减排计划。这一协议被视为应对气候变化的重要里程碑。</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-author">李环保</span>
+                        <span>2023年10月14日</span>
+                        <span>阅读量: 3.8万</span>
+                    </div>
+                </div>
+                
+                <!-- 第三篇新闻 -->
+                <div class="news-article">
+                    <h4>城市更新改善居民生活质量</h4>
+                    <div class="article-images">
+                        <img src="C:\Users\Administrator\Desktop\lab4(2)-31-臧礼斌\5.webp" alt="城市新闻图片">
+                        <img src="C:\Users\Administrator\Desktop\lab4(2)-31-臧礼斌\6.webp" alt="城市新闻图片">
+                    </div>
+                    <div class="article-content">
+                        <p>随着城市化进程加快，各地积极推进城市更新项目。老旧小区改造、公园绿地建设、交通设施完善等措施显著提升了居民生活品质。市民纷纷表示，生活环境变得更舒适便捷，城市面貌焕然一新。</p>
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-author">王城市</span>
+                        <span>2023年10月13日</span>
+                        <span>阅读量: 2.9万</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右栏 - 热文推荐 -->
+            <div class="right-column">
+                <h3 class="hot-news-title">热门推荐</h3>
+                
+                <!-- 第一篇热文 -->
+                <div class="hot-article">
+                    <a href="#">人工智能技术在各行业的应用现状与前景分析</a>
+                    <img src="C:\Users\Administrator\Desktop\lab4(2)-31-臧礼斌\7.webp" alt="AI技术">
+                </div>
+                
+                <!-- 第二篇热文 -->
+                <div class="hot-article">
+                    <a href="#">新能源汽车市场持续升温，消费者如何选择？</a>
+                    <img src="C:\Users\Administrator\Desktop\lab4(2)-31-臧礼斌\8.webp" alt="新能源汽车">
+                </div>
+                
+                <!-- 第三篇热文 -->
+                <div class="hot-article">
+                    <a href="#">后疫情时代旅游业复苏：新趋势与新机遇</a>
+                    <img src="C:\Users\Administrator\Desktop\lab4(2)-31-臧礼斌\9.webp" alt="旅游业">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
